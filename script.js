@@ -11,12 +11,21 @@ function createCanvas(numberOfCells) {
         ;
     }
 }
-createCanvas(256);
 if (resetButton) {
-    resetButton.onclick = function () { return resetAll(); };
+    resetButton.addEventListener('click', function () {
+        removeCanvas();
+        createCanvas(256);
+    });
 }
 function addColor(e) {
-    e.target.classList.add('painted-div');
+    e.target.style = "background-color: rgb(".concat(Math.floor(Math.random() * 256), ",").concat(Math.floor(Math.random() * 256), ",").concat(Math.floor(Math.random() * 256), ")");
+    e.target.removeEventListener("pointerover", addColor);
+}
+function removeCanvas() {
+    var childDivs = document.querySelectorAll('.child-div');
+    childDivs.forEach(function (div) {
+        div.remove();
+    });
 }
 function resetAll() {
     var paintedChildDivs = document.querySelectorAll('.painted-div');
