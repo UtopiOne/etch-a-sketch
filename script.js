@@ -12,7 +12,9 @@ function createCanvas(numberOfCells) {
     }
 }
 createCanvas(256);
-resetButton.onclick = function () { return resetAll(); };
+if (resetButton) {
+    resetButton.onclick = function () { return resetAll(); };
+}
 function addColor(e) {
     e.target.classList.add('painted-div');
 }
