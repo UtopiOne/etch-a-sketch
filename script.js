@@ -27,9 +27,3 @@ function removeCanvas() {
         div.remove();
     });
 }
-function resetAll() {
-    var paintedChildDivs = document.querySelectorAll('.painted-div');
-    paintedChildDivs.forEach(function (div) {
-        div.classList.remove('painted-div');
-    });
-}

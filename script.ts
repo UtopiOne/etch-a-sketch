@@ -24,17 +24,9 @@ function addColor(e) {
     e.target.removeEventListener("pointerover", addColor);
 }
 
-function removeCanvas {
+function removeCanvas() {
     let childDivs = document.querySelectorAll('.child-div');
     childDivs.forEach((div: any) => {
         div.remove()
     })
 }
-
-function resetAll() {
-    const paintedChildDivs = document.querySelectorAll('.painted-div');
-    paintedChildDivs.forEach((div) => {
-        div.classList.remove('painted-div');
-    });
-}
-
